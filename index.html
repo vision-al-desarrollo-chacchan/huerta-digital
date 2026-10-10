@@ -12,75 +12,50 @@
   <meta property="og:image" content="https://huertadigital.net.pe/huerta-digital-horizontal.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="./huerta-digital-logo.png">
+  <script src="./animations.js?v=20261010" defer></script>
   <title>Huerta Digital | Soluciones Digitales & Software a Medida</title>
-  <link rel="stylesheet" href="./styles.css?v=20261006">
+  <link rel="stylesheet" href="./styles.css?v=20261010">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Huerta Digital, inicio">
-      <img class="brand-logo brand-logo-header" src="./huerta-digital-horizontal.png" alt="Huerta Digital">
+    <a class="brand header-brand" href="#inicio" aria-label="Huerta Digital, inicio">
+      <img class="brand-logo brand-logo-header" src="./huerta-digital-horizontal.png" alt="Huerta Digital" width="2172" height="724">
     </a>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="#servicios">Servicios</a>
-      <a href="#erp">Huerta ERP</a>
-      <a href="#proceso">Cómo trabajamos</a>
-      <a href="#preguntas">Preguntas</a>
+  <header class="site-header">
+    <div class="brand-space" aria-hidden="true"></div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="main-navigation" aria-label="Navegación principal">
+      <a class="active" href="#inicio" aria-current="location">Inicio</a>
+      <a href="#erp">Sistemas ERP</a>
+      <a href="#paginas-web">Páginas Web</a>
+      <a href="#diseno-grafico">Diseño Gráfico</a>
+      <a href="#otros-servicios">Otros Servicios</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <a class="btn-cta" href="https://wa.me/51986952366?text=Hola%20Huerta%20Digital%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noreferrer">
-      Cotizar ahora ↗
-    </a>
+    <a class="btn-cta" aria-label="Solicitar una demo de Huerta ERP" href="https://wa.me/51986952366?text=Hola%20Huerta%20Digital%2C%20deseo%20solicitar%20una%20Demo%20de%20Huerta%20ERP." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-14 4h2m4 0h2m-8 3h2"/></svg><span>Solicitar Demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
   </header>
 
   <main>
-    <!-- HERO SECTION -->
-    <section class="hero-section" id="inicio">
+    <section class="hero-section" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-scene" aria-hidden="true"><img src="./assets/hero-office.webp" alt="" fetchpriority="high" width="1536" height="1024"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <canvas class="tech-particles" aria-hidden="true"></canvas>
       <div class="hero-container">
         <div class="hero-text-col">
-          <div class="tag-badge">
-            <span class="dot-neon"></span> TECNOLOGÍA · DISEÑO · RESULTADOS
-          </div>
-          <h1>Agilizamos tus procesos y potenciamos tu marca con <em>soluciones digitales a medida</em></h1>
-          <p class="hero-desc">
-            Desarrollamos sistemas de gestión, páginas web de alto impacto y piezas visuales de alta conversión pensadas para que tu negocio crezca con orden, rapidez y seguridad.
-          </p>
+          <p class="hero-eyebrow">SOLUCIONES <span>DIGITALES PARA</span> TU NEGOCIO</p>
+          <h1 id="hero-title">Digitaliza y controla<br><em>tu negocio</em><br>desde un solo lugar</h1>
+          <p class="hero-desc">Sistemas ERP, páginas web y herramientas digitales para que tu empresa sea más eficiente, moderna y rentable.</p>
           <div class="hero-buttons">
-            <a class="btn-primary" href="https://wa.me/51986952366?text=Hola%20Huerta%20Digital%2C%20quiero%20iniciar%20un%20proyecto." target="_blank" rel="noreferrer">
-              Iniciar Proyecto ↗
-            </a>
-            <a class="btn-secondary" href="#erp">
-              Conocer Huerta ERP ↓
-            </a>
-          </div>
-          <div class="trust-indicators">
-            <div class="trust-item"><strong>Software</strong><span>A tu medida</span></div>
-            <div class="trust-item"><strong>Diseño</strong><span>Alta conversión</span></div>
-            <div class="trust-item"><strong>Soporte</strong><span>Directo y cercano</span></div>
-          </div>
-        </div>
-
-        <div class="hero-visual-col">
-          <div class="visual-card">
-            <div class="card-chip">IDENTIDAD & TECNOLOGÍA</div>
-            <img class="logo-showcase" src="./huerta-digital-logo.png" alt="Logo oficial de Huerta Digital">
-            <div class="color-palette-bar">
-              <span class="bar-neon" title="Verde Turquesa Neón"></span>
-              <span class="bar-cyan" title="Azul Cyan"></span>
-              <span class="bar-blue" title="Azul Eléctrico"></span>
-              <span class="bar-white" title="Blanco Hielo"></span>
-            </div>
-            <p class="visual-quote">Tu marca con una imagen profesional y tecnología que responde.</p>
-            <div class="float-badge top-badge">
-              <span class="icon-spark">⚡</span>
-              <div><strong>Huerta ERP</strong><small>Control total en la nube</small></div>
-            </div>
-            <div class="float-badge bottom-badge">
-              <span class="status-pulse"></span>
-              <div><strong>Sistema en línea</strong><small>Operaciones en tiempo real</small></div>
-            </div>
+            <a class="btn-primary" href="#servicios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 21h8m-4-5v5"/></svg><span>Ver soluciones</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+            <a class="btn-secondary" href="https://wa.me/51986952366?text=Hola%20Huerta%20Digital%2C%20deseo%20solicitar%20una%20Demo%20de%20Huerta%20ERP." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4Z"/></svg><span>Solicitar demo</span></a>
           </div>
         </div>
       </div>
+    </section>
+    <section class="solutions-ribbon" aria-label="Nuestras soluciones">
+      <a class="solution-link" href="#erp"><span class="solution-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 3-1 3-3 1-3 3 2 2-1 3 3 3 3-1 2 2 3-1 1-3 3-1 2-3-2-2 1-3-3-3-3 1Z"/><circle cx="12" cy="12" r="4"/></svg></span><span><strong>Sistemas ERP</strong><small>Control total de tu negocio</small></span></a>
+      <a class="solution-link" href="#paginas-web"><span class="solution-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 7h14M5 17h14"/></svg></span><span><strong>Páginas Web</strong><small>Tu marca en internet</small></span></a>
+      <a class="solution-link" href="#diseno-grafico"><span class="solution-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 16 12-12a2 2 0 0 1 4 4L8 20l-5 1 1-5Zm10-10 4 4M12 21h9"/></svg></span><span><strong>Diseño Gráfico</strong><small>Ideas que venden</small></span></a>
+      <a class="solution-link" href="#marketing-digital"><span class="solution-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V13h4v8Zm6 0V8h4v13Zm6 0V3h4v18Z"/></svg></span><span><strong>Marketing Digital</strong><small>Más clientes para tu negocio</small></span></a>
     </section>
 
     <!-- HUERTA ERP SHOWCASE -->
@@ -185,7 +160,7 @@
             </div>
           </details>
 
-          <details class="service-box">
+          <details class="service-box" id="paginas-web">
             <summary>
               <img src="./services/paginas-web.webp" alt="Páginas web profesionales">
               <div class="box-content">
@@ -212,7 +187,7 @@
       <div class="category-block">
         <h3 class="cat-title"><span class="cat-icon">🎨</span> b) Diseño & Marca</h3>
         <div class="services-grid">
-          <details class="service-box">
+          <details class="service-box" id="diseno-grafico">
             <summary>
               <img src="./services/diseno-grafico.webp" alt="Identidad visual">
               <div class="box-content">
@@ -252,7 +227,7 @@
             </div>
           </details>
 
-          <details class="service-box">
+          <details class="service-box" id="marketing-digital">
             <summary>
               <img src="./services/marketing.webp" alt="Marketing y Redes">
               <div class="box-content">
@@ -275,7 +250,7 @@
       </div>
 
       <!-- c) Soporte & Asistencia -->
-      <div class="category-block">
+      <div class="category-block" id="otros-servicios">
         <h3 class="cat-title"><span class="cat-icon">📊</span> c) Soporte & Asistencia</h3>
         <div class="services-grid">
           <details class="service-box">
