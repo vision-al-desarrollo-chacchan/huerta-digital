@@ -1,0 +1,47 @@
+name: Diagnostico nocturno seguro
+on:
+  schedule:
+    - cron: '17 8 * * *' # 03:17 America/Lima (UTC-5)
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Revisar archivos y enlaces locales
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          root=Path('.')
+          files=[root/'index.html',root/'styles.css',root/'animations.js']
+          errors=[]
+          for f in files:
+              if not f.is_file(): errors.append(f'Falta {f}')
+          if (root/'index.html').exists():
+              html=(root/'index.html').read_text(encoding='utf-8')
+              for p in re.findall(r'(?:src|href)\s*=\s*["\x27]([^"\x27]+)',html):
+                  if p.startswith(('https:','http:','mailto:','tel:','#','data:','javascript:','//')): continue
+                  local=p.split('?')[0].split('#')[0].lstrip('/')
+                  if local and not (root/local).exists(): errors.append(f'Recurso no encontrado: {p}')
+          print('\n'.join(errors) if errors else 'Archivos y recursos locales comprobados')
+          if errors: raise SystemExit(1)
+          PY
+        continue-on-error: true
+      - name: Guardar resumen
+        if: always()
+        run: |
+          mkdir -p informe
+          echo "# Diagnostico nocturno" > informe/resumen.md
+          echo "Repositorio: ${{ github.repository }}" >> informe/resumen.md
+          echo "Fecha UTC: $(date -u)" >> informe/resumen.md
+          echo "Estado: ${{ job.status }}" >> informe/resumen.md
+          echo "Consulta los logs de cada paso para detalles." >> informe/resumen.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: informe-nocturno
+          path: informe/
